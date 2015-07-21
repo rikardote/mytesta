@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Cod:</strong>
+  <%= @adscription.cod %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @adscription.name %>
+</p>
+
+<%= link_to 'Edit', edit_adscription_path(@adscription) %> |
+<%= link_to 'Back', adscriptions_path %>

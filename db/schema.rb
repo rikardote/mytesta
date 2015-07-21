@@ -11,7 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150721201705) do
+ActiveRecord::Schema.define(version: 20150721210223) do
+
+  create_table "adscriptions", force: :cascade do |t|
+    t.integer  "cod"
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "departments", force: :cascade do |t|
     t.string   "name"
@@ -23,10 +30,12 @@ ActiveRecord::Schema.define(version: 20150721201705) do
     t.string   "name"
     t.string   "email"
     t.integer  "department_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.integer  "adscription_id"
   end
 
+  add_index "users", ["adscription_id"], name: "index_users_on_adscription_id"
   add_index "users", ["department_id"], name: "index_users_on_department_id"
 
 end
