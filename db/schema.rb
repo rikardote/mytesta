@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150721210223) do
+ActiveRecord::Schema.define(version: 20150721220906) do
 
   create_table "adscriptions", force: :cascade do |t|
     t.integer  "cod"
@@ -22,9 +22,12 @@ ActiveRecord::Schema.define(version: 20150721210223) do
 
   create_table "departments", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.integer  "adscription_id"
   end
+
+  add_index "departments", ["adscription_id"], name: "index_departments_on_adscription_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "name"

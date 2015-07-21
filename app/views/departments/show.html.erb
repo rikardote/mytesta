@@ -4,6 +4,10 @@
   <strong>Name:</strong>
   <%= @department.name %>
 </p>
+<p>
+  <strong>Adscripcion:</strong>
+  <%= @department.adscription.name %>
+</p>
 
 <%= link_to 'Edit', edit_department_path(@department) %> |
 <%= link_to 'Back', departments_path %>

@@ -15,6 +15,11 @@
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
+  
+   <div class="field">
+    
+    <%= f.collection_select :adscription_id, Adscription.all, :id, :name %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
