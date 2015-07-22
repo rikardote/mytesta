@@ -20,8 +20,13 @@
     <%= f.text_field :email %>
   </div>
   <div class="field">
+    <%= f.label :adscription_id %><br>
+    <%= f.collection_select :adscription_id, Adscription.order(:cod), :id, :name, include_blank: true %>
+    
+  </div>
+  <div class="field">
     <%= f.label :department_id %><br>
-    <%= f.collection_select :department_id, Department.all, :id, :name %>
+    <%= f.grouped_collection_select :department_id, Adscription.order(:cod), :departments, :name, :id, :name, include_blank: true %>
     
   </div>
   <div class="actions">
